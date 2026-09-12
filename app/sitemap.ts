@@ -2,11 +2,12 @@ import type { MetadataRoute } from 'next';
 import { siteConfig } from '@/config/site';
 import { TOOLS, SEO_LANDING_PAGES } from '@/config/tools';
 
+export const dynamic = 'force-static';
+
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = siteConfig.url || 'https://imagetools.online';
   const currentDate = new Date().toISOString();
 
-  // Root Homepage
   const routes: MetadataRoute.Sitemap = [
     {
       url: baseUrl,
@@ -16,7 +17,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
   ];
 
-  // Core Tools
   TOOLS.forEach((tool) => {
     routes.push({
       url: `${baseUrl}${tool.href}`,
@@ -26,7 +26,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     });
   });
 
-  // Targeted SEO Landing Pages
   SEO_LANDING_PAGES.forEach((page) => {
     routes.push({
       url: `${baseUrl}${page.href}`,
