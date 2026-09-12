@@ -1,0 +1,6 @@
+{
+  "name": "Image Tools",
+  "description": "Fast, private, free online image tools - compress, resize, convert, and crop images directly in your browser with zero server uploads.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
